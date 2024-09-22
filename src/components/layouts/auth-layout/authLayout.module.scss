@@ -1,0 +1,15 @@
+.container {
+	@apply h-screen flex items-center justify-center relative md-max:flex-col md-max:justify-start md-max:items-start;
+
+	.logo {
+		@apply w-[152px] h-[152px] absolute top-0 left-[60px] z-10 md-max:w-[74px] md-max:h-[74px] md-max:relative md-max:left-[1.875rem] md-max:mb-10;
+	}
+
+	.background {
+		@apply absolute inset-0 z-0;
+	}
+
+	.backdropBlur {
+		@apply h-screen absolute top-0 right-0 w-2/5 min-w-[515px] bg-white/40 flex items-center justify-center before:backdrop-blur-[9px] before:absolute before:w-full before:h-full md-max:w-full md-max:bg-transparent  md-max:relative  md-max:before:hidden sm-max:min-w-0 sm-max:justify-start md-max:items-start;
+	}
+}

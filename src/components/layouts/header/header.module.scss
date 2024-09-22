@@ -1,0 +1,29 @@
+.header {
+	@apply flex justify-between items-center gap-10 w-full lg-max:gap-5;
+
+	.logo {
+		@apply w-[77px] h-[77px];
+	}
+
+	.navigation {
+		@apply flex w-full md-max:hidden;
+
+		ul {
+			@apply flex gap-16 w-full xl-max:gap-10 lg:gap-4;
+
+			li {
+				a {
+					@apply font-primary  text-primary 2xl:text-lg xl:text-md lg:text-md lg-max:text-sm;
+				}
+			}
+		}
+	}
+
+	.links {
+		@apply flex gap-6 md-max:hidden;
+	}
+
+	.burger {
+		// @apply md:hidden;
+	}
+}

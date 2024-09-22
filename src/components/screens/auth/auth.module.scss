@@ -1,0 +1,42 @@
+.formContainer {
+	@apply relative z-10 bg-white/60 border-white/10 px-10 py-20 rounded-2xl max-w-[475px] w-full backdrop-blur-[18px] sm-max:max-w-full md-max:py-[1.563rem] md-max:px-5 sm-max:mx-5;
+
+	.title {
+		@apply text-5xl font-second font-bold text-black mb-9;
+	}
+
+	.form {
+		@apply flex flex-col;
+
+		.remember {
+			@apply flex justify-between items-center mb-4 sm-max:flex-col sm-max:items-start sm-max:gap-4;
+
+			.rememberPassword {
+				@apply font-second text-sm font-medium  text-primary;
+			}
+		}
+	}
+	.separator {
+		@apply flex items-center justify-center mt-4 mb-6;
+
+		hr {
+			@apply flex-grow border-t-2 border-lightGray;
+		}
+
+		span {
+			@apply text-darkGray font-bold font-second text-sm px-3 bg-backgroundWhite;
+		}
+	}
+
+	.buttons {
+		@apply flex flex-col gap-2 mb-12;
+	}
+
+	.footer {
+		@apply w-full text-center font-second text-sm text-darkGray flex md-max:flex-col items-center justify-center;
+
+		a {
+			@apply underline underline-offset-2 decoration-1 decoration-darkGray/50 font-bold ml-1 uppercase;
+		}
+	}
+}
