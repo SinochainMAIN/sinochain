@@ -2,15 +2,13 @@
 
 import { useMutation } from '@tanstack/react-query'
 import { useRouter, useSearchParams } from 'next/navigation'
-import router from 'next/router'
 import { useEffect } from 'react'
 
 import Loader from '@/components/ui/Loader'
 
 import { IActivateAccount } from '@/types/auth.types'
 
-import { ROOT_PAGES } from '@/config/pages-url.config'
-
+import { EnumTokens, saveCookieStorage } from '@/services/auth-token.service'
 import { authService } from '@/services/auth.service'
 
 function ActivateAccount() {
@@ -18,18 +16,19 @@ function ActivateAccount() {
 	const searchParams = useSearchParams()
 
 	const token = searchParams.get('token')
+	const uid = searchParams.get('uid')
 
 	const { mutate, isPending, isError, isSuccess } = useMutation({
-		mutationKey: ['auth'],
+		mutationKey: ['activate'],
 		mutationFn: (data: IActivateAccount) => authService.activate(data),
 		onSuccess() {
-			push(ROOT_PAGES.HOME)
+			if (token) saveCookieStorage(EnumTokens.ACCESS_TOKEN, token)
 		}
 	})
 
 	useEffect(() => {
-		if (token) {
-			mutate({ token: '', uid: '' })
+		if (token && uid) {
+			mutate({ token: token, uid: uid })
 		} else {
 			push('/login')
 			refresh()
@@ -39,13 +38,13 @@ function ActivateAccount() {
 	useEffect(() => {
 		if (isSuccess || isError) {
 			const timer = setTimeout(() => {
-				push('/')
+				push(isError ? '/' : '/setup')
 				refresh()
 			}, 5000)
 
 			return () => clearTimeout(timer)
 		}
-	}, [isSuccess, isError, router])
+	}, [isSuccess, isError])
 
 	if (isPending) {
 		return (
@@ -94,7 +93,16 @@ function ActivateAccount() {
 			</div>
 		</div>
 	) : (
-		<div></div>
+		<div>
+			{/* <Button
+				variant='dark'
+				onClick={() => {
+					if (token && uid) mutate({ token: token, uid: uid })
+				}}
+			>
+				Активировать
+			</Button> */}
+		</div>
 	)
 }
 

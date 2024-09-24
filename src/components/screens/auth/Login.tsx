@@ -28,7 +28,7 @@ function Login() {
 	const { push } = useRouter()
 
 	const { mutate, isPending } = useMutation({
-		mutationKey: ['auth'],
+		mutationKey: ['login'],
 		mutationFn: (data: IAuthForm) => authService.login(data),
 		onSuccess() {
 			// toast.success('Successfully login!')

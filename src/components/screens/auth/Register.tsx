@@ -25,7 +25,7 @@ function Register() {
 	const { openModal, closeModal } = useModal()
 
 	const { mutate } = useMutation({
-		mutationKey: ['auth'],
+		mutationKey: ['register'],
 		mutationFn: (data: IAuthForm) => authService.register(data),
 		onSuccess() {
 			openModal()
