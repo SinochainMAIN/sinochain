@@ -8,7 +8,6 @@ import Loader from '@/components/ui/Loader'
 
 import { IActivateAccount } from '@/types/auth.types'
 
-import { EnumTokens, saveCookieStorage } from '@/services/auth-token.service'
 import { authService } from '@/services/auth.service'
 
 function ActivateAccount() {
@@ -18,11 +17,20 @@ function ActivateAccount() {
 	const token = searchParams.get('token')
 	const uid = searchParams.get('uid')
 
+	const timer = () => {
+		const timer = setTimeout(() => {
+			push('/login')
+			refresh()
+		}, 5000)
+
+		return () => clearTimeout(timer)
+	}
+
 	const { mutate, isPending, isError, isSuccess } = useMutation({
 		mutationKey: ['activate'],
 		mutationFn: (data: IActivateAccount) => authService.activate(data),
-		onSuccess() {
-			if (token) saveCookieStorage(EnumTokens.ACCESS_TOKEN, token)
+		onSettled() {
+			timer()
 		}
 	})
 
@@ -31,20 +39,8 @@ function ActivateAccount() {
 			mutate({ token: token, uid: uid })
 		} else {
 			push('/login')
-			refresh()
 		}
 	}, [])
-
-	useEffect(() => {
-		if (isSuccess || isError) {
-			const timer = setTimeout(() => {
-				push(isError ? '/' : '/setup')
-				refresh()
-			}, 5000)
-
-			return () => clearTimeout(timer)
-		}
-	}, [isSuccess, isError])
 
 	if (isPending) {
 		return (

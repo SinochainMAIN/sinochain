@@ -7,5 +7,5 @@ export interface IManager {
 	middle_name: string | null
 	phone_number: string | null
 	telegram: string | null
-	company: any | null
+	company: number | null
 }

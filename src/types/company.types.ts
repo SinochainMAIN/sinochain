@@ -1,4 +1,5 @@
 import { IBankDetails } from './bank.types'
+import { ICargo } from './cargo.types'
 import { ICompanyInsurance } from './insurance.types'
 import { IManager } from './manager.types'
 import { ITransport } from './transport.types'
@@ -17,23 +18,21 @@ export interface ICompany {
 	acts_on_the_basis: string | null
 	nds: boolean
 	// TODO: types
-	transportation_directions: any[]
+	transportation_directions: string[]
 	related_companies: string[]
+	banks: IBankDetails[]
+	insurances: ICompanyInsurance[]
+	managers: IManager[]
 }
 
 export interface ITransportCompany extends ICompany {
 	customs: boolean
 	yeo: boolean
 	expensive_cargo: boolean
-	// TODO: types
-	insurances: ICompanyInsurance[]
-	// TODO: types
-	banks: IBankDetails[]
-	transports: ITransport[]
-	managers: IManager[]
 }
 
 export interface IForwardingCompany extends ICompany {
 	// TODO: types
-	types_of_cargo: any[]
+	types_of_cargo: string[]
+	current_cargos: ICargo
 }

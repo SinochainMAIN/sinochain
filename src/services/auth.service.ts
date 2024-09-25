@@ -41,6 +41,19 @@ class AuthService {
 
 		return response
 	}
+
+	async myAccount(token: string) {
+		const response = await axiosClassic.get<IActivateAccount>(
+			`${this.BASE_URL}/users/me/`,
+			{
+				headers: {
+					Authorization: `${token}`
+				}
+			}
+		)
+
+		return response
+	}
 }
 
 export const authService = new AuthService()
