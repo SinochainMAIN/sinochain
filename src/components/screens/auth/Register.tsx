@@ -1,11 +1,13 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import LanguagesSwitcher from '@/components/ui/LanguagesSwitcher'
 import { Button } from '@/components/ui/buttons/Button'
-import { AuthInput } from '@/components/ui/inputs/AuthInput'
+import { AuthInput } from '@/components/ui/inputs/AuthInput/AuthInput'
 import Modal from '@/components/ui/modals/Modal'
 
 import { IAuthForm } from '@/types/auth.types'
@@ -18,6 +20,7 @@ import Google from '@/public/image/google.svg'
 import { authService } from '@/services/auth.service'
 
 function Register() {
+	const t = useTranslations()
 	const { register, handleSubmit, reset } = useForm<IAuthForm>({
 		mode: 'onChange'
 	})
@@ -25,7 +28,7 @@ function Register() {
 	const { openModal, closeModal } = useModal()
 
 	const { mutate } = useMutation({
-		mutationKey: ['auth'],
+		mutationKey: ['register'],
 		mutationFn: (data: IAuthForm) => authService.register(data),
 		onSuccess() {
 			openModal()
@@ -46,9 +49,8 @@ function Register() {
 					onSubmit={handleSubmit(onSubmit)}
 				>
 					<AuthInput
-						id='email'
-						label='Email*'
-						placeholder='Введите Email:'
+						label={`${t('auth.common.email')}*`}
+						placeholder={t('auth.common.emailPlaceholder')}
 						type='email'
 						{...register('email', {
 							required: 'Email is required!',
@@ -57,9 +59,8 @@ function Register() {
 						extra='mb-5'
 					/>
 					<AuthInput
-						id='password'
-						label='Password*'
-						placeholder='Введите пароль:'
+						label={`${t('auth.common.password')}*`}
+						placeholder={t('auth.common.passwordPlaceholder')}
 						type='password'
 						extra='mb-4'
 						{...register('password', {
@@ -67,7 +68,7 @@ function Register() {
 							maxLength: 150
 						})}
 					/>
-					<Button variant='dark'>Зарегистрироваться</Button>
+					<Button variant='dark'>{t('auth.register.enter')}</Button>
 				</form>
 				<div
 					role='separator'
@@ -75,7 +76,7 @@ function Register() {
 					className={styles.separator}
 				>
 					<hr aria-hidden='true' />
-					<span>Или</span>
+					<span>{t('auth.common.or')}</span>
 					<hr aria-hidden='true' />
 				</div>
 				<div className={styles.buttons}>
@@ -83,38 +84,37 @@ function Register() {
 						variant='white'
 						icon={Google}
 					>
-						Зарегистрироваться с помощью Google
+						{t('auth.register.google')}
 					</Button>
 					<Button
 						variant='white'
 						icon={Facebook}
 					>
-						Зарегистрироваться с помощью Facebook
+						{t('auth.register.facebook')}
 					</Button>
 					<Button
 						variant='white'
 						icon={Apple}
 					>
-						Зарегистрироваться с помощью Apple
+						{t('auth.register.apple')}
 					</Button>
 				</div>
 				<p className={styles.footer}>
-					Уже есть аккаунт?
-					<Link href={'login'}>Войти</Link>
+					{t('auth.register.alreadyAccount')}
+					<Link href={'login'}>{t('auth.register.login')}</Link>
 				</p>
+				<LanguagesSwitcher />
 			</div>
 			<Modal shouldCloseOnOutsideClick>
 				<div className='flex flex-col w-full max-w-md gap-5'>
 					<h1 className='text-5xl font-second font-bold text-black'>
-						Подтвердите почту
+						{t('auth.register.modal.title')}
 					</h1>
 					<p className='text-md font-second text-primary'>
-						Мы отправили письмо на указанную вами почту. Пожалуйста, перейдите в
-						свою почту и кликните по ссылке в письме, чтобы активировать ваш
-						аккаунт.
+						{t('auth.register.modal.description')}
 					</p>
 					<p className='text-md font-second text-primary'>
-						Если вы уже перешли по ссылке из письма - обновите страницу.
+						{t('auth.register.modal.refresh')}
 					</p>
 
 					<Button
@@ -122,7 +122,7 @@ function Register() {
 						className='w-full'
 						onClick={closeModal}
 					>
-						Ок
+						{t('common.actions.ok')}
 					</Button>
 				</div>
 			</Modal>

@@ -1,0 +1,153 @@
+{
+	"common": {
+		"language": "Language",
+		"actions": {
+			"ok": "Ok",
+			"continue": "Continue",
+			"create": "Create"
+		}
+	},
+	"auth": {
+		"common": {
+			"email": "Email",
+			"emailPlaceholder": "Enter Email",
+			"password": "Password",
+			"passwordPlaceholder": "Enter password",
+			"or": "Or"
+		},
+		"login": {
+			"title": "Login",
+			"rememberMe": "Remember me",
+			"forgotPassword": "Forgot password?",
+			"enter": "Login",
+			"google": "Login with Google",
+			"facebook": "Login with Facebook",
+			"apple": "Login with Apple",
+			"newUser": "New user?",
+			"register": "REGISTER"
+		},
+		"register": {
+			"title": "Registration",
+			"enter": "REGISTER",
+			"google": "Register with Google",
+			"facebook": "Register with Facebook",
+			"apple": "Register with Apple",
+			"alreadyAccount": "Already have an account?",
+			"login": "LOGIN",
+			"modal": {
+				"title": "Confirm your email",
+				"description": "We have sent a letter to the email you provided. Please check your email and click the link in the letter to activate your account.",
+				"refresh": "If you have already clicked the link in the letter, refresh the page."
+			}
+		}
+	},
+	"activate": {
+		"loading": "Activating account",
+		"success": {
+			"title": "Account successfully activated",
+			"subtitle": "You can now log into your account."
+		},
+		"error": {
+			"title": "Account activation error",
+			"subtitle": "You may have already activated the account or used an invalid link."
+		},
+		"redirect": "You will be automatically redirected to the main page in 5 seconds.",
+		"close": "You can also close this page at any time."
+	},
+	"setup": {
+		"stepper": {
+			"activate": {
+				"title": "Account Activation"
+			},
+			"personalInfo": {
+				"title": "Personal Information"
+			},
+			"company": {
+				"title": "Company"
+			}
+		},
+		"personalInfo": {
+			"step": "Step 2: Fill in Personal Information",
+			"description": "Please fill in all required fields with your personal information to continue using the site.",
+			"lastName": {
+				"label": "Last Name",
+				"placeholder": "Enter last name"
+			},
+			"firstName": {
+				"label": "First Name",
+				"placeholder": "Enter first name"
+			},
+			"middleName": {
+				"label": "Middle Name",
+				"placeholder": "Enter middle name"
+			},
+			"telegram": {
+				"label": "Telegram",
+				"placeholder": "Enter Telegram"
+			},
+			"phone": {
+				"label": "Phone Number"
+			},
+			"company": {
+				"label": "Company Type",
+				"transport": "Carrier",
+				"forwarding": "Freight Forwarder"
+			}
+		},
+		"company": {
+			"step": "Step 3: Create a Company",
+			"description": "Please fill in all required fields with your personal information to continue using the site.",
+			"companyName": {
+				"label": "Company Name",
+				"placeholder": "Enter company name"
+			},
+			"innUnp": {
+				"label": "TIN/UNP",
+				"placeholder": "Enter TIN or UNP"
+			},
+			"ogrn": {
+				"label": "OGRN",
+				"placeholder": "Enter OGRN"
+			},
+			"countryOfRegistration": {
+				"label": "Country of Registration",
+				"placeholder": "Select country of registration"
+			},
+			"legalAddress": {
+				"label": "Legal Address",
+				"placeholder": "Enter legal address"
+			},
+			"postAddress": {
+				"label": "Postal Address",
+				"placeholder": "Enter postal address"
+			},
+			"email": {
+				"label": "Corporate Email",
+				"placeholder": "Enter corporate email"
+			},
+			"phone": {
+				"label": "Corporate Phone Number"
+			},
+			"director": {
+				"label": "Director",
+				"placeholder": "Enter director information"
+			},
+			"acts": {
+				"label": "Acts on the basis of"
+			},
+			"nds": "Works with VAT",
+			"customs": "Customs Carrier",
+			"yeo": "Authorized Economic Operator",
+			"expensive_cargo": "Transportation of Expensive Cargo",
+			"transportationDirections": {
+				"label": "Transportation Directions",
+				"placeholder": "Select transportation directions"
+			}
+		}
+	},
+	"validate": {
+		"phone": {
+			"incorrected": "Enter a valid phone number"
+		}
+	}
+}

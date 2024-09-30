@@ -4,6 +4,7 @@ import {
 	IAuthResponse,
 	IRegisterResponse
 } from '@/types/auth.types'
+import { IManager } from '@/types/manager.types'
 
 import { axiosClassic } from '@/api/interceptors'
 
@@ -26,17 +27,8 @@ class AuthService {
 
 	async register(data: IAuthForm) {
 		const response = await axiosClassic.post<IRegisterResponse>(
-			`${this.BASE_URL}/users`,
-			{
-				...data,
-				last_name: 'test',
-				first_name: 'test',
-				middle_name: 'test',
-				phone_number: 'test',
-				telegram: 'test',
-				is_active: false,
-				is_admin: false
-			}
+			`${this.BASE_URL}/users/`,
+			data
 		)
 
 		return response
@@ -44,10 +36,28 @@ class AuthService {
 
 	async activate(data: IActivateAccount) {
 		const response = await axiosClassic.post<IActivateAccount>(
-			`${this.BASE_URL}/users`,
+			`${this.BASE_URL}/users/activation/`,
 			data
 		)
+
 		return response
+	}
+
+	async myAccount(token: string) {
+		try {
+			const response = await axiosClassic.get<IManager>(
+				`/api/v1/managers/me/`,
+				{
+					headers: {
+						Authorization: `Token ${token}`
+					}
+				}
+			)
+
+			return response
+		} catch (error) {
+			console.log(error)
+		}
 	}
 }
 

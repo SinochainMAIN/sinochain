@@ -1,19 +1,24 @@
-import React from 'react'
+import { InputHTMLAttributes } from 'react'
 
-interface CustomCheckboxProps
-	extends React.InputHTMLAttributes<HTMLInputElement> {
+interface CustomCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	label?: string
 	checked: boolean
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+	extraLabel?: string
 }
 
-function Checkbox({ label, checked, onChange, ...props }: CustomCheckboxProps) {
+function Checkbox({
+	label,
+	checked,
+	onChange,
+	extraLabel,
+	...props
+}: CustomCheckboxProps) {
 	return (
-		<div className='inline-flex items-center gap-1'>
-			<label
-				className='flex items-center cursor-pointer relative'
-				htmlFor={props.id}
-			>
+		<label
+			className='flex items-center cursor-pointer gap-1'
+			htmlFor={props.id}
+		>
+			<div className='flex items-center relative'>
 				<input
 					type='checkbox'
 					checked={checked}
@@ -37,16 +42,9 @@ function Checkbox({ label, checked, onChange, ...props }: CustomCheckboxProps) {
 						></path>
 					</svg>
 				</span>
-			</label>
-			{label && (
-				<label
-					className='cursor-pointer font-second text-xs text-black'
-					htmlFor={props.id}
-				>
-					{label}
-				</label>
-			)}
-		</div>
+			</div>
+			{label && <span className={extraLabel}>{label}</span>}
+		</label>
 	)
 }
 

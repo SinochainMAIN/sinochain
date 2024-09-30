@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 
-import ReqAuthLayout from '@/components/layouts/ReqAuthLayout'
+import AuthLayout from '@/components/layouts/auth-layout/AuthLayout'
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
-	return <ReqAuthLayout>{children}</ReqAuthLayout>
+	return <AuthLayout>{children}</AuthLayout>
 }

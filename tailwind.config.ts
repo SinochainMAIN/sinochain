@@ -22,7 +22,23 @@ const config: Config = {
 				xs: '0.69rem',
 				'2xs': '0.75rem',
 				sm: '0.81rem',
+				'md-mob': '0.88rem',
 				md: '1rem',
+				lg: '1.25rem',
+				xl: '1.31rem',
+				'2xl': '1.38rem',
+				'3xl': '1.44rem',
+				'4xl': '1.5rem',
+				'5xl': '1.56rem',
+				'6xl': '2.25rem'
+			},
+			lineHeight: {
+				xs: '0.69rem',
+				'2xs': '0.75rem',
+				sm: '0.81rem',
+				'md-mob': '0.88rem',
+				md: '1rem',
+
 				lg: '1.25rem',
 				xl: '1.31rem',
 				'2xl': '1.38rem',
@@ -146,6 +162,12 @@ const config: Config = {
 				'98p': '98%',
 				'99p': '99%'
 			}
+		},
+		backgroundImage: {
+			'select-arrow': `url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0MjQyNDIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im02IDkgNiA2IDYtNiIvPjwvc3ZnPg==')`
+		},
+		backgroundPosition: {
+			select: 'right 0.7rem top 50%'
 		},
 		screens: {
 			sm: '576px',

@@ -1,0 +1,19 @@
+.container {
+	@apply w-full flex flex-col;
+
+	.form {
+		@apply w-full flex flex-col;
+
+		.title {
+			@apply text-4xl leading-4xl font-second font-bold text-black mt-5 mb-2 sm-max:text-lg sm-max:leading-md;
+		}
+
+		.description {
+			@apply text-md font-second text-gray-500 mb-9 leading-md sm-max:leading-2xs sm-max:mb-4 sm-max:text-md-mob;
+		}
+
+		.fields {
+			@apply flex flex-col w-full gap-5;
+		}
+	}
+}

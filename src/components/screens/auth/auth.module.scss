@@ -33,7 +33,7 @@
 	}
 
 	.footer {
-		@apply w-full text-center font-second text-sm text-darkGray flex md-max:flex-col items-center justify-center;
+		@apply w-full text-center font-second text-sm text-darkGray flex md-max:flex-col items-center justify-center mb-5;
 
 		a {
 			@apply underline underline-offset-2 decoration-1 decoration-darkGray/50 font-bold ml-1 uppercase;
