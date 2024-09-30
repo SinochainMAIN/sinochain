@@ -9,3 +9,7 @@ export interface IManager {
 	telegram: string | null
 	company: number | null
 }
+
+export type TypePersonalInfoForm = Partial<
+	Omit<IManager, 'id' | 'email' | 'password' | 'company'>
+>

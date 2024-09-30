@@ -1,6 +1,7 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -11,6 +12,7 @@ import { IActivateAccount } from '@/types/auth.types'
 import { authService } from '@/services/auth.service'
 
 function ActivateAccount() {
+	const t = useTranslations()
 	const { push, refresh } = useRouter()
 	const searchParams = useSearchParams()
 
@@ -47,7 +49,7 @@ function ActivateAccount() {
 			<div className='flex justify-center items-center min-h-screen gap-5'>
 				<Loader size={6} />
 				<h1 className='text-4xl font-bold font-primary'>
-					Аккаунт активируется...
+					{`${t('activate.loading')}...`}
 				</h1>
 			</div>
 		)
@@ -59,31 +61,22 @@ function ActivateAccount() {
 				{isSuccess && (
 					<div className='text-center font-second text-md flex flex-col gap-4'>
 						<h1 className='text-4xl font-bold text-green-600'>
-							Аккаунт успешно активирован!
+							{t('activate.success.title')}!
 						</h1>
-						<p>Теперь вы можете войти в свою учетную запись.</p>
-						<p>
-							Вы будете автоматически перенаправлены на главную страницу через 5
-							секунд.
-						</p>
-						<p>Вы также можете закрыть эту страницу в любое время.</p>
+						<p>{t('activate.success.subtitle')}</p>
+						<p>{t('activate.redirect')}</p>
+						<p>{t('activate.close')}</p>
 					</div>
 				)}
 
 				{isError && (
 					<div className='text-center font-second text-md flex flex-col gap-4'>
 						<h1 className='text-4xl font-bold text-red-600'>
-							Ошибка активации аккаунта
+							{t('activate.error.title')}!
 						</h1>
-						<p>
-							Возможно вы уже активировали аккаунт или воспользовались
-							недействительной ссылкой.
-						</p>
-						<p>
-							Вы будете автоматически перенаправлены на страницу авторизации
-							через 5 секунд.
-						</p>
-						<p>Вы также можете закрыть эту страницу в любое время.</p>
+						<p>{t('activate.error.subtitle')}</p>
+						<p>{t('activate.redirect')}</p>
+						<p>{t('activate.close')}</p>
 					</div>
 				)}
 			</div>

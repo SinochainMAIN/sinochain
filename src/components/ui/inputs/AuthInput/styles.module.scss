@@ -1,0 +1,7 @@
+.passwordIcon {
+	@apply absolute m-auto inset-y-0 right-2 text-borderSecondary peer-focus:text-primary cursor-pointer;
+}
+
+.label {
+	@apply text-sm text-borderSecondary font-second rounded-xs bg-backgroundWhite px-2 absolute -top-3 left-3 peer-focus:text-primary;
+}

@@ -2,7 +2,6 @@ import { IBankDetails } from './bank.types'
 import { ICargo } from './cargo.types'
 import { ICompanyInsurance } from './insurance.types'
 import { IManager } from './manager.types'
-import { ITransport } from './transport.types'
 
 export interface ICompany {
 	id: number
@@ -17,7 +16,6 @@ export interface ICompany {
 	director: string | null
 	acts_on_the_basis: string | null
 	nds: boolean
-	// TODO: types
 	transportation_directions: string[]
 	related_companies: string[]
 	banks: IBankDetails[]
@@ -32,7 +30,10 @@ export interface ITransportCompany extends ICompany {
 }
 
 export interface IForwardingCompany extends ICompany {
-	// TODO: types
 	types_of_cargo: string[]
 	current_cargos: ICargo
 }
+
+export type TypeForwardingCompanyForm = Partial<Omit<IForwardingCompany, 'id'>>
+
+export type TypeTransportCompanyForm = Partial<Omit<ITransportCompany, 'id'>>

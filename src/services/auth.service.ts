@@ -4,6 +4,7 @@ import {
 	IAuthResponse,
 	IRegisterResponse
 } from '@/types/auth.types'
+import { IManager } from '@/types/manager.types'
 
 import { axiosClassic } from '@/api/interceptors'
 
@@ -43,16 +44,20 @@ class AuthService {
 	}
 
 	async myAccount(token: string) {
-		const response = await axiosClassic.get<IActivateAccount>(
-			`${this.BASE_URL}/users/me/`,
-			{
-				headers: {
-					Authorization: `${token}`
+		try {
+			const response = await axiosClassic.get<IManager>(
+				`/api/v1/managers/me/`,
+				{
+					headers: {
+						Authorization: `Token ${token}`
+					}
 				}
-			}
-		)
+			)
 
-		return response
+			return response
+		} catch (error) {
+			console.log(error)
+		}
 	}
 }
 

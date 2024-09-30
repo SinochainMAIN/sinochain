@@ -1,14 +1,16 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import LanguagesSwitcher from '@/components/ui/LanguagesSwitcher'
 import { Button } from '@/components/ui/buttons/Button'
 import Checkbox from '@/components/ui/checkbox/Checkbox'
-import { AuthInput } from '@/components/ui/inputs/AuthInput'
+import { AuthInput } from '@/components/ui/inputs/AuthInput/AuthInput'
 
 import { IAuthForm } from '@/types/auth.types'
 
@@ -21,6 +23,7 @@ import Google from '@/public/image/google.svg'
 import { authService } from '@/services/auth.service'
 
 function Login() {
+	const t = useTranslations()
 	const { register, handleSubmit, reset } = useForm<IAuthForm>({
 		mode: 'onChange'
 	})
@@ -45,15 +48,14 @@ function Login() {
 
 	return (
 		<div className={styles.formContainer}>
-			<h1 className={styles.title}>Вход</h1>
+			<h1 className={styles.title}>{t('auth.login.title')}</h1>
 			<form
 				className={styles.form}
 				onSubmit={handleSubmit(onSubmit)}
 			>
 				<AuthInput
-					id='email'
-					label='Логин/Email*'
-					placeholder='Введите Логин/Email:'
+					label={`${t('auth.common.email')}*`}
+					placeholder={t('auth.common.emailPlaceholder')}
 					type='email'
 					{...register('email', {
 						required: 'Email is required!'
@@ -61,9 +63,8 @@ function Login() {
 					extra='mb-5'
 				/>
 				<AuthInput
-					id='password'
-					label='Password*'
-					placeholder='Введите пароль:'
+					label={`${t('auth.common.password')}*`}
+					placeholder={t('auth.common.passwordPlaceholder')}
 					type='password'
 					extra='mb-4'
 					{...register('password', {
@@ -74,11 +75,14 @@ function Login() {
 					<Checkbox
 						checked={remember}
 						onChange={e => setRemember(e.target.checked)}
-						label='Запомнить меня'
+						label={t('auth.login.rememberMe')}
 						id='remember'
+						extraLabel='font-second text-xs text-black'
 					/>
 
-					<span className={styles.rememberPassword}>Забыли пароль?</span>
+					<span className={styles.rememberPassword}>
+						{t('auth.login.forgotPassword')}
+					</span>
 				</div>
 				<Button
 					variant='dark'
@@ -86,7 +90,7 @@ function Login() {
 					isFetching={isPending}
 					type='submit'
 				>
-					Войти
+					{t('auth.login.enter')}
 				</Button>
 			</form>
 			<div
@@ -95,7 +99,7 @@ function Login() {
 				className={styles.separator}
 			>
 				<hr aria-hidden='true' />
-				<span>Или</span>
+				<span>{t('auth.common.or')}</span>
 				<hr aria-hidden='true' />
 			</div>
 			<div className={styles.buttons}>
@@ -104,27 +108,28 @@ function Login() {
 					icon={Google}
 					type='button'
 				>
-					Войти с помощью Google
+					{t('auth.login.google')}
 				</Button>
 				<Button
 					variant='white'
 					icon={Facebook}
 					type='button'
 				>
-					Войти с помощью Facebook
+					{t('auth.login.facebook')}
 				</Button>
 				<Button
 					variant='white'
 					icon={Apple}
 					type='button'
 				>
-					Войти с помощью Apple
+					{t('auth.login.apple')}
 				</Button>
 			</div>
 			<p className={styles.footer}>
-				Новый пользователь?
-				<Link href={'register'}>Зарегистрируйся</Link>
+				{t('auth.login.newUser')}
+				<Link href={'register'}>{t('auth.login.register')}</Link>
 			</p>
+			<LanguagesSwitcher />
 		</div>
 	)
 }
