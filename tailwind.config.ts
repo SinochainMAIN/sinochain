@@ -15,37 +15,27 @@ const config: Config = {
 		extend: {
 			colors: COLORS,
 			fontFamily: {
-				primary: ['var(--font-mont)'],
-				second: ['var(--font-zen)']
+				primary: ['var(--font-primary)']
 			},
 			fontSize: {
-				xs: '0.69rem',
-				'2xs': '0.75rem',
-				sm: '0.81rem',
-				'md-mob': '0.88rem',
-				md: '1rem',
-				lg: '1.25rem',
-				xl: '1.31rem',
-				'2xl': '1.38rem',
-				'3xl': '1.44rem',
-				'4xl': '1.5rem',
-				'5xl': '1.56rem',
-				'6xl': '2.25rem'
+				xs: ['0.625rem', '0.79rem'],
+				sm: ['0.75rem', '0.9rem'],
+				md: ['0.9rem', '1.04rem'],
+				lg: ['1.04rem', '1.16rem'],
+				xl: ['1.16rem', '1.26rem'],
+				'2xl': ['1.26rem', '1.375rem'],
+				'3xl': ['1.375rem', '1.5rem'],
+				'4xl': ['1.5rem', '1.625rem']
 			},
 			lineHeight: {
-				xs: '0.69rem',
-				'2xs': '0.75rem',
-				sm: '0.81rem',
-				'md-mob': '0.88rem',
-				md: '1rem',
-
-				lg: '1.25rem',
-				xl: '1.31rem',
-				'2xl': '1.38rem',
-				'3xl': '1.44rem',
-				'4xl': '1.5rem',
-				'5xl': '1.56rem',
-				'6xl': '2.25rem'
+				xs: '0.625rem',
+				sm: '0.75rem',
+				md: '0.875rem',
+				lg: '1rem',
+				xl: '1.13rem',
+				'2xl': '1.25rem',
+				'3xl': '1.375rem',
+				'4xl': '1.5rem'
 			},
 			borderRadius: {
 				none: '0',
@@ -169,6 +159,7 @@ const config: Config = {
 		backgroundPosition: {
 			select: 'right 0.7rem top 50%'
 		},
+
 		screens: {
 			sm: '576px',
 			'sm-max': { max: '576px' },
@@ -183,6 +174,10 @@ const config: Config = {
 			'3xl': '1430px',
 			'3xl-max': { max: '1430px' }
 		}
+		// textUnderlineOffset: {
+		// 	'2': '2px',
+		// 	'3': '3px'
+		// }
 	},
 	plugins: []
 }

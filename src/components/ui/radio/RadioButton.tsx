@@ -25,7 +25,7 @@ function RadioButton({
 			/>
 			<span className={styles.icon} />
 			{label && (
-				<span className='text-primary font-second text-md ml-1 leading-[1rem]'>
+				<span className='text-primary font-primary text-md ml-1 sm-max:text-sm'>
 					{label}
 				</span>
 			)}

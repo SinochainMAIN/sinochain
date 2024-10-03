@@ -20,7 +20,7 @@ function Stepper({ currentStep }: Props) {
 				return (
 					<li
 						key={index}
-						className={`flex items-center text-${color} gap-2 font-second text-md leading-md sm-max:text-md-mob sm-max:leading-md-mob`}
+						className={`flex items-center text-${color} gap-2 font-primary text-md sm-max:text-sm`}
 					>
 						<span
 							className={`flex items-center justify-center w-8 h-8 border border-${color} rounded-full shrink-0 font-bold ${!completed ? 'pb-[2px]' : 'bg-green-600'}`}
@@ -37,7 +37,7 @@ function Stepper({ currentStep }: Props) {
 						<span className={`font-medium`}>
 							<h3>{t(step.name)}</h3>
 							{step.description && (
-								<p className='text-sm'>{t(step.description)}</p>
+								<p className='text-md text-gray-500'>{t(step.description)}</p>
 							)}
 						</span>
 					</li>

@@ -240,7 +240,7 @@ function CreateTransportCompany() {
 					{Object.values(errors).map((error, index) => (
 						<p
 							key={index}
-							className='text-md font-second font-medium text-red-600'
+							className='text-md font-primary font-medium text-red-600'
 						>
 							{error?.message?.toString()}
 						</p>

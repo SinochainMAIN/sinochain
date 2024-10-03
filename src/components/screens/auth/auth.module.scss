@@ -1,18 +1,18 @@
 .formContainer {
-	@apply relative z-10 bg-white/60 border-white/10 px-10 py-20 rounded-2xl max-w-[475px] w-full backdrop-blur-[18px] sm-max:max-w-full md-max:py-[1.563rem] md-max:px-5 sm-max:mx-5;
+	@apply relative z-10 bg-white/60 border-white/10 px-10 py-10 rounded-2xl max-w-[475px] w-full backdrop-blur-[18px] sm-max:max-w-full md-max:py-[1.563rem] md-max:px-5 sm-max:mx-5;
 
 	.title {
-		@apply text-5xl font-second font-bold text-black mb-9;
+		@apply text-2xl font-primary font-bold text-black mb-7 sm-max:text-xl;
 	}
 
 	.form {
 		@apply flex flex-col;
 
 		.remember {
-			@apply flex justify-between items-center mb-4 sm-max:flex-col sm-max:items-start sm-max:gap-4;
+			@apply flex justify-between items-center mb-4 sm-max:flex-col sm-max:items-start sm-max:gap-3;
 
 			.rememberPassword {
-				@apply font-second text-sm font-medium  text-primary;
+				@apply font-primary text-md text-primary sm-max:text-sm;
 			}
 		}
 	}
@@ -24,7 +24,7 @@
 		}
 
 		span {
-			@apply text-darkGray font-bold font-second text-sm px-3 bg-backgroundWhite;
+			@apply text-darkGray font-bold font-primary text-md px-3 py-1 bg-backgroundWhite sm-max:text-sm;
 		}
 	}
 
@@ -33,10 +33,10 @@
 	}
 
 	.footer {
-		@apply w-full text-center font-second text-sm text-darkGray flex md-max:flex-col items-center justify-center mb-5;
+		@apply w-full text-center font-primary text-md sm-max:text-sm text-darkGray flex md-max:flex-col items-center justify-center mb-5;
 
 		a {
-			@apply underline underline-offset-2 decoration-1 decoration-darkGray/50 font-bold ml-1 uppercase;
+			@apply underline underline-offset-2 decoration-1 decoration-darkGray/50 font-bold ml-1 md-max:ml-0 uppercase;
 		}
 	}
 }

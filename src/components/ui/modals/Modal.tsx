@@ -28,10 +28,10 @@ function Modal({ children, shouldCloseOnOutsideClick }: ModalProps) {
 	return createPortal(
 		<div className='fixed inset-0 flex items-center justify-center z-50'>
 			<div
-				className='absolute inset-0 bg-black/50'
+				className='absolute inset-0  bg-black/50'
 				onClick={handleOutsideClick}
 			></div>
-			<div className='bg-white rounded-lg shadow-lg  p-6 relative z-10'>
+			<div className='bg-white rounded-lg shadow-lg m-5 p-6 relative z-10'>
 				{children}
 			</div>
 		</div>,

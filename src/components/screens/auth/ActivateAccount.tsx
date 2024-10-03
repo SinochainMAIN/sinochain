@@ -59,7 +59,7 @@ function ActivateAccount() {
 		<div className='flex flex-col items-center justify-center min-h-screen bg-gray-100'>
 			<div className='bg-white p-8 rounded-lg shadow-md max-w-md w-full'>
 				{isSuccess && (
-					<div className='text-center font-second text-md flex flex-col gap-4'>
+					<div className='text-center font-primary text-md flex flex-col gap-4'>
 						<h1 className='text-4xl font-bold text-green-600'>
 							{t('activate.success.title')}!
 						</h1>
@@ -70,7 +70,7 @@ function ActivateAccount() {
 				)}
 
 				{isError && (
-					<div className='text-center font-second text-md flex flex-col gap-4'>
+					<div className='text-center font-primary text-md flex flex-col gap-4'>
 						<h1 className='text-4xl font-bold text-red-600'>
 							{t('activate.error.title')}!
 						</h1>

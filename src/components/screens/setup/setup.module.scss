@@ -5,11 +5,11 @@
 		@apply w-full flex flex-col;
 
 		.title {
-			@apply text-4xl leading-4xl font-second font-bold text-black mt-5 mb-2 sm-max:text-lg sm-max:leading-md;
+			@apply text-2xl font-primary font-bold text-black mt-5 mb-2 sm-max:text-xl;
 		}
 
 		.description {
-			@apply text-md font-second text-gray-500 mb-9 leading-md sm-max:leading-2xs sm-max:mb-4 sm-max:text-md-mob;
+			@apply text-md font-primary text-gray-500 mb-9 sm-max:mb-4 sm-max:text-sm;
 		}
 
 		.fields {

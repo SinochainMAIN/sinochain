@@ -3,5 +3,5 @@
 }
 
 .label {
-	@apply text-sm text-borderSecondary font-second rounded-xs bg-backgroundWhite px-2 absolute -top-3 left-3 peer-focus:text-primary;
+	@apply text-md text-borderSecondary font-primary rounded-xs bg-backgroundWhite px-2 py-1 absolute -top-[10px] left-3 peer-focus:text-primary sm-max:text-sm;
 }

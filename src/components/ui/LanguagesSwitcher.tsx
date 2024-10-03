@@ -25,7 +25,7 @@ function LanguagesSwitcher() {
 	}
 
 	return (
-		<label className='flex gap-1 items-center justify-center font-second text-sm'>
+		<label className='flex gap-1 items-center justify-center font-primary text-sm'>
 			<Languages size={16} />
 			<p>{`${t('common.language')}:`}</p>
 			<select
