@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware'
-import { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 import { routing } from './i18n/routing'
 import { EnumTokens } from './services/auth-token.service'
@@ -22,17 +22,17 @@ export async function middleware(request: NextRequest) {
 
 	response.headers.set('x-current-path', request.nextUrl.pathname)
 
-	// if (isAuthPage && accessToken) {
-	// 	return NextResponse.redirect(new URL('/', url))
-	// }
+	if (isAuthPage && accessToken) {
+		return NextResponse.redirect(new URL('/', url))
+	}
 
-	// if (isAuthPage) {
-	// 	return response
-	// }
+	if (isAuthPage) {
+		return response
+	}
 
-	// if (!accessToken) {
-	// 	return NextResponse.redirect(new URL('/login', url))
-	// }
+	if (!accessToken) {
+		return NextResponse.redirect(new URL('/login', url))
+	}
 
 	return response
 }
