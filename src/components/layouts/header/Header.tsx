@@ -32,7 +32,7 @@ export function Header({ currentUrl }: Props) {
 							<li key={item.name}>
 								<Link
 									href={item.url}
-									className={`${currentUrl && currentUrl.includes(item.url) ? 'underline decoration-1' : ''}`}
+									className={`${currentUrl && currentUrl.includes(item.url) ? 'underline decoration-1 underline-offset-4' : 'hover:underline hover:decoration-1 hover:underline-offset-4'}`}
 								>
 									{item.name}
 								</Link>
@@ -45,17 +45,17 @@ export function Header({ currentUrl }: Props) {
 					<Link href={'#'}>
 						<Mail
 							className='text-yellowAccent'
-							size={30}
+							size={24}
 						/>
 					</Link>
 					<Link href={'#'}>
 						<UsersRound
 							className='text-yellowAccent'
-							size={30}
+							size={24}
 						/>
 					</Link>
 				</div>
-
+				{/* TODO: visible open >768px */}
 				<BurgerMenu />
 			</header>
 		</>

@@ -77,7 +77,7 @@ function Login() {
 						onChange={e => setRemember(e.target.checked)}
 						label={t('auth.login.rememberMe')}
 						id='remember'
-						extraLabel='font-second text-xs text-black'
+						extraLabel='text-black'
 					/>
 
 					<span className={styles.rememberPassword}>

@@ -4,21 +4,21 @@ import { Link } from '@/i18n/routing'
 
 export default function NotFound() {
 	return (
-		<div className='w-dvw h-dvh flex flex-col items-center justify-center font-second gap-10 text-center p-5 sm-max:gap-5'>
+		<div className='w-dvw h-dvh flex flex-col items-center justify-center font-primary gap-5 text-center p-5 sm-max:gap-5'>
 			<SearchX
-				size={100}
+				size={60}
 				className='text-primary'
 			/>
-			<h2 className='text-primary text-6xl font-bold sm-max:text-3xl'>
+			<h2 className='text-primary text-3xl font-bold sm-max:text-2xl'>
 				Страница не найдена
 			</h2>
-			<p className='text-primary text-2xl sm-max:text-md'>
+			<p className='text-primary text-lg sm-max:text-lg'>
 				Возможно, вы воспользовались недействительной ссылкой или страница была
 				удалена.
 			</p>
 			<Link
 				href='/'
-				className='text-white text-2xl rounded-sm p-4 leading-2xl bg-primary pb-5 sm-max:text-md sm-max:leading-md '
+				className='flex justify-center items-center active:scale-95 text-md h-[3.5rem] text-white font-bold font-primary bg-darkGray rounded-sm hover:bg-darkGray/90 uppercase disabled:hover:bg-darkGray px-5 sm-max:text-sm sm-max:[2.69rem]'
 			>
 				На главную
 			</Link>

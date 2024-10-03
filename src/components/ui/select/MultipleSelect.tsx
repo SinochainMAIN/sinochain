@@ -62,7 +62,7 @@ const MultipleSelect = ({
 							key={`selected_${selectedOption}`}
 							className='flex items-center gap-1 border bg-lightGray  outline-none rounded-sm  px-2 py-2 text-primary'
 						>
-							<span className='font-second font-normal text-md leading-md '>
+							<span className='font-primary text-md sm-max:text-sm'>
 								{selectedOption}
 							</span>
 							<X

@@ -71,7 +71,7 @@ function BurgerMenu() {
 							/>
 							<Link
 								href={'#'}
-								className='text-2xs font-primary font-medium text-primary'
+								className='text-sm font-primary font-medium text-primary'
 							>
 								{item.name}
 							</Link>

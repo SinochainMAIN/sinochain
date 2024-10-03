@@ -107,13 +107,13 @@ function Register() {
 			</div>
 			<Modal shouldCloseOnOutsideClick>
 				<div className='flex flex-col w-full max-w-md gap-5'>
-					<h1 className='text-5xl font-second font-bold text-black'>
+					<h1 className='text-2xl font-primary font-bold text-black sm-max:text-xl'>
 						{t('auth.register.modal.title')}
 					</h1>
-					<p className='text-md font-second text-primary'>
+					<p className='text-md font-primary text-primary sm-max:text-sm'>
 						{t('auth.register.modal.description')}
 					</p>
-					<p className='text-md font-second text-primary'>
+					<p className='text-md font-primary text-primary sm-max:text-sm'>
 						{t('auth.register.modal.refresh')}
 					</p>
 

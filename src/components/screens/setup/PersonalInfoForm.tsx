@@ -119,13 +119,11 @@ function PersonalInfo({
 						checked={typeCompany === 'transport'}
 						onChange={() => setTypeCompany('transport')}
 						label={t('setup.personalInfo.company.transport')}
-						extraLabel='font-second text-md text-primary leading-md sm-max:text-md-mob sm-max:leading-md-mob'
 					/>
 					<Checkbox
 						checked={typeCompany === 'forwarding'}
 						onChange={() => setTypeCompany('forwarding')}
 						label={t('setup.personalInfo.company.forwarding')}
-						extraLabel='font-second text-md text-primary leading-md sm-max:text-md-mob sm-max:leading-md-mob'
 					/>
 				</div>
 			</div>
@@ -135,7 +133,7 @@ function PersonalInfo({
 					{Object.values(errors).map((error, index) => (
 						<p
 							key={index}
-							className='text-md font-second font-medium text-red-600'
+							className='text-md font-primary font-medium text-red-600'
 						>
 							{error?.message?.toString()}
 						</p>

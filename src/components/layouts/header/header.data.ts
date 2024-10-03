@@ -2,11 +2,6 @@ import { Users2 } from 'lucide-react'
 
 export const MENU = [
 	{
-		url: '/',
-		name: 'Главная',
-		icon: Users2
-	},
-	{
 		url: '/search',
 		name: 'Поиск груза',
 		icon: Users2

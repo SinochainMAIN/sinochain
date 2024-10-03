@@ -7,11 +7,11 @@ import Loader from '../Loader'
 type Variant = 'dark' | 'white' | 'transparent' | 'gray'
 
 const styles: Record<Variant, string> = {
-	dark: 'text-sm h-[3.5rem] text-white font-bold font-second bg-darkGray rounded-sm hover:bg-darkGray/90 uppercase disabled:hover:bg-darkGray px-5',
+	dark: 'text-md h-[3.5rem] text-white font-bold font-primary bg-darkGray rounded-sm hover:bg-darkGray/90 uppercase disabled:hover:bg-darkGray px-5 sm-max:text-sm sm-max:[2.69rem]',
 	white:
-		'text-sm h-[3rem] border border-[#eee] bg-backgroundWhite px-10 rounded-sm hover:bg-backgroundWhite/90 flex justify-center items-center font-second sm-max:px-5 disabled:hover:bg-backgroundWhite',
-	transparent: 'text-3xl font-bold sm:text-2xl',
-	gray: 'text-2xl font-bold sm:text-1xl'
+		'text-md h-[3rem] border border-[#eee] bg-backgroundWhite px-10 rounded-sm hover:bg-backgroundWhite/90 flex justify-center items-center font-primary sm-max:px-5 sm-max:text-sm disabled:hover:bg-backgroundWhite',
+	transparent: 'text-md font-bold sm:text-sm',
+	gray: 'text-md font-bold sm:text-sm'
 }
 
 interface Props {

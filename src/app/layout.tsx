@@ -1,26 +1,18 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { Montserrat, Zen_Kaku_Gothic_Antique } from 'next/font/google'
+import { Ubuntu } from 'next/font/google'
 
 import { SITE_NAME } from '@/constants/seo.constants'
 
 import './globals.scss'
 import Providers from './providers'
 
-const zen = Zen_Kaku_Gothic_Antique({
+const fontPrimary = Ubuntu({
 	subsets: ['cyrillic'],
 	weight: ['400', '500', '700'],
 	display: 'swap',
-	variable: '--font-zen',
-	style: ['normal']
-})
-
-const mont = Montserrat({
-	subsets: ['cyrillic'],
-	weight: ['400', '500', '700'],
-	display: 'swap',
-	variable: '--font-mont',
+	variable: '--font-primary',
 	style: ['normal']
 })
 
@@ -40,12 +32,11 @@ export default async function RootLayout({
 	params: { locale: string }
 }>) {
 	const messages = await getMessages()
-	
 
 	return (
 		<html
 			lang={locale}
-			className={`${zen.variable} ${mont.variable}`}
+			className={`${fontPrimary.variable}`}
 		>
 			<body>
 				<NextIntlClientProvider messages={messages}>

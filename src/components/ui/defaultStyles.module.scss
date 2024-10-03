@@ -1,11 +1,11 @@
 .label {
-	@apply text-primary mb-1 text-lg font-medium font-second  sm-max:text-md;
+	@apply text-primary mb-1 text-md font-medium font-primary  sm-max:text-sm;
 }
 
 .input,
 .select,
 .multiSelect {
-	@apply w-full h-[3.5rem] bg-transparent border border-borderSecondary focus:border-primary outline-none rounded-sm font-second font-normal text-md text-primary px-4 sm-max:h-[2.69rem];
+	@apply w-full h-[3.5rem] bg-transparent border border-borderSecondary focus:border-primary outline-none rounded-sm font-primary font-normal text-md text-primary px-4 sm-max:h-[2.69rem] placeholder:text-borderSecondary;
 }
 
 .multiSelect,

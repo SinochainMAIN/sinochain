@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { InputHTMLAttributes } from 'react'
 
 interface CustomCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -43,7 +44,11 @@ function Checkbox({
 					</svg>
 				</span>
 			</div>
-			{label && <span className={extraLabel}>{label}</span>}
+			{label && (
+				<span className={clsx(extraLabel, 'text-md sm-max:text-sm')}>
+					{label}
+				</span>
+			)}
 		</label>
 	)
 }
